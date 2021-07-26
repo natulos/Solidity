@@ -12,8 +12,7 @@ contract FirstContract{
     }
     
     function getPublicFunctionPrivateVariable() public view returns(uint){
-        return data;
-        
+        return data; 
     }
     
     //Can be access from this contract itself and contract which derived from it
@@ -22,7 +21,6 @@ contract FirstContract{
     }
     
     function computerInternalSum(uint a, uint b) internal pure returns(uint){
-        
         return a + b;
     }
 }
