@@ -25,7 +25,8 @@ contract Fruits{
         fruits.push('orange');
         
         //storage vs memory
-        string[] memory mewFruits = fruits;      //save the value mango in memory and don't override the value in position 1
+        string[] memory mewFruits = fruits;      //save the value mango in memory and don't override the value in position 1.
+
         //string[] storage mewFruits = fruits;   //override the position 1 with the value mango
         mewFruits[1] = 'mango';
     }
