@@ -6,7 +6,7 @@ contract SimpleAction{
     //Event
     event EventTrigger(address bidder, uint amount); 
 
-    // Trigger event
+    // Trigger event 
     function bid() public payable{
         emit EventTrigger(msg.sender, msg.value);
     }
