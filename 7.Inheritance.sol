@@ -16,7 +16,6 @@ contract ParentContract {
     }
 }
 
-
 contract ChildrenContract is ParentContract{
     
     function getInteger() public virtual view override returns (uint){
