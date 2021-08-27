@@ -13,7 +13,7 @@ contract MultiSigWallet {
 
     constructor( address[] memory _approvers, 
                  uint _minApprovers, 
-                 address payable _beneficiary)  payable {
+                 address payable _beneficiary) payable {
 
         require( _minApprovers <= _approvers.length, "Required number of apporvers should be less than number of approvers");
 
@@ -35,14 +35,13 @@ contract MultiSigWallet {
         }
 
         if (approvalsNum == minApprovers) {
-            beneficiary.transfer(address(this).balance);
-            selfdestruct(owner);
+            beneficiary.transfer(address(this).balance); //Transfer send the ether to the beneficiary account
+            selfdestruct(owner); //selfdestruct -> Destroy the Smart contract and send the ethers to the specific account.
         }
     }
 
     function reject() public {
         require(isApprover[msg.sender], "Not an approver");
-
         selfdestruct(owner);
     }
 }
